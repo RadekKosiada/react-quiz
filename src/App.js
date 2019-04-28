@@ -72,7 +72,7 @@ class App extends Component {
       this.setState({
         errorMessage: "*This is a required field"
       })
-    } else if(this.state.value === this.state.correctAnswer){
+    } else if(this.state.value.toLowerCase() === this.state.correctAnswer.toLowerCase()){
       console.log("correct")
       //counting points if correct answer
       if(this.state.score === 0) {
@@ -88,6 +88,31 @@ class App extends Component {
           round: 1+this.state.round,
           errorMessage: ""
         })
+      }
+      if(this.state.round === 30) {
+        this. displayYouWonPopup()
+      }
+      this.state.value = "";
+      //triggering a new question
+      this.getQuestion();
+     
+    } else if(this.state.correctAnswer.toLowerCase().includes(this.state.value.toLowerCase())){
+      console.log("correct")
+      //counting points if correct answer
+      if(this.state.score === 0) {
+        this.setState({
+          score: +0.5,
+          round: 1+this.state.round,         
+          errorMessage: ""
+      
+        })
+      } else {
+        this.setState({
+          score: this.state.score + this.state.score/2,
+          round: 1+this.state.round,
+          errorMessage: ""
+        })
+        console.log("partly points", this.state.score + this.state.score/2, this.state.score/2 )
       }
       if(this.state.round === 30) {
         this. displayYouWonPopup()
@@ -156,3 +181,11 @@ class App extends Component {
 }
 
 export default App;
+
+function checkPercents(firstWord, secondWord) { 
+  var result = firstWord.length * 100/secondWord.length;
+  return result;
+}
+
+console.log(checkPercents('me', 'metaphor'));
+
