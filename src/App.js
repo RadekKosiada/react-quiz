@@ -7,9 +7,7 @@ import YouWonPopup from "./youWonPopup";
 import Timer from "./timer";
 //React component; glue for react & redux;
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from 'redux';
-
-const store = createStore(() => [], {}, applyMiddleware());
+import store from "./store";
 
 class App extends Component {
   constructor(props) {
