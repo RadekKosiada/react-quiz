@@ -8,7 +8,7 @@
 // Always CREATE A NEW REFERENCE for the new state creating a new object/array. 
 // React keeps track of the state reference changes and if you do not change the reference how will it know a change has happened?
 
-import { ADD_USER } from "actions";
+import { ADD_USER } from "./actions";
 
 //                        prevState,        action
 function userDataReducer(state={users: []}, action){
