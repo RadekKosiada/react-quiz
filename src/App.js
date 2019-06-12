@@ -24,7 +24,7 @@ class App extends Component {
       round: 1,
       showGameOverPopup: false,
       showYouWonPopup: false,
-      time: 60,
+      time: 30,
       winCondition: 5,
       answeredQuestions: 0
     };
@@ -65,7 +65,7 @@ class App extends Component {
       round: 1,
       score: 0,
       value: "",
-      time: 60,
+      time: 30,
       currentRoundPoints: 1,
       answeredQuestions: 0,
       errorMessage: ""
@@ -218,14 +218,6 @@ class App extends Component {
         )}
       </div>
     );
-    // } else {
-    //   return (
-    //     <div>Loading....
-    //     <Question getQuestions={this.getQuestions} />
-    //     </div>
-    //   )
-
-    // }
   }
 }
 
